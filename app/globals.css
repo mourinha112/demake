@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #ec4899;
+  --primary-dark: #db2777;
+  --accent-color: #f472b6;
+}
+
+body {
+  background: linear-gradient(135deg, #ff9ac7 0%, #ff6fa8 50%, #ff4f9a 100%);
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-white font-bold py-5 px-12 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:translate-y-0 uppercase tracking-wide text-lg;
+  }
+
+  .container-white {
+    @apply max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden;
+  }
+
+  .quiz-option {
+    @apply w-full p-6 text-left bg-white border-2 border-gray-200 rounded-2xl text-lg font-semibold text-gray-900 transition-all duration-300 hover:border-primary hover:bg-pink-50 hover:scale-105 cursor-pointer shadow-md hover:shadow-xl;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
